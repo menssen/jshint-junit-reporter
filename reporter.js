@@ -55,6 +55,8 @@ exports.reporter = function (results, data, opts) {
   if (opts.outputFile && !outputFile)
     outputFile = opts.outputFile;
 
+  suite = opts.suiteName || suite
+
   results.forEach(function (result) {
     result.file = result.file.replace(/^\.\//, '');
     if (!files[result.file]) {
